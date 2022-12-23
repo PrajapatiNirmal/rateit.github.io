@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate It</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap');
+*{
+   margin: 0;
+   padding: 0;
+}
+.main_container{
+   height: 100vh;
+   width: 100vw;
+   background-color: #a3acada6;
+   position: absolute;
+}
+.form-box{
+    height: 350px;
+    width: 400px;
+    background-color: white;
+    position: relative;
+    margin: 6% auto;padding: 5px;
+     /*...........................................overflow: hidden;..............................................*/
+     transition: 0.3s;
+}
+
+.input-group{
+    top:30px;
+    position: absolute;
+    width: 280px;
+    margin-left: 9px;
+    transition: .3s;
+}
+
+.input-group h3{
+    color: rgb(237, 75, 75);
+    font-family: 'Unbounded', cursive;
+    margin-left: 91px;
+}
+.inputs{
+    margin-top: 5px;
+    margin-bottom: 12px;
+    width: 300px;
+    height: 25px;
+    margin-left: 35px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: 'Unbounded', cursive;
+    letter-spacing: 1px;
+    font-weight: bolder;
+}
+#Uname, #Upassword, #Ucpassword, #Umail{
+    border: 1.5px solid gray;
+    padding-left: 10px;
+    background-color: #a3acada6;
+}
+#fpassword{
+    text-decoration: none;
+    color:rgb(255, 0, 0);
+}
+#fpassword:hover{
+    color:black;
+}
+#submit_btn{
+    height: 35px;
+    width:312px;
+    margin-top: 20px;
+    background-color:rgb(237, 75, 75);
+    border: 1.5px solid gray;
+    color: white;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+#submit_btn1{
+    height: 35px;
+    width:80px;
+    margin-top: -5px;
+    background-color:rgb(237, 75, 75);
+    border: 1.5px solid gray;
+    color: white;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+#low_lbl{
+    letter-spacing: 0px;
+    margin-left: 78px;
+}
+.lower-btn{
+    padding-top:7px;
+    background-color: white;
+    border:none;
+    color:#3d3ddc;
+    font-size:12px;
+    cursor: pointer;
+    font-family: 'Unbounded', cursive;
+}
+
+#Login{
+    left:0px;
+}
+
+#Signup{
+    left:420px;
+}
+#umail{
+    background-color: #a3acada6;
+    width: 100px;
+}
+
+@media screen and (max-width:800) and (min-width:200){
+.main_container{
+   height: 100%;
+   width: 100%;
+}
+.form-box{
+    height: 420px;
+    width: 400px;
+}
+}
+</style>
+</head>
+<body>
+    <div class="main_container">
+    <div class="form-box">
+   
+    <div id="Login" class="input-group">
+        <h3><b>Forgot Password</b></h3><br>
+        <label for="Uname" class="inputs"> Email : </label><input class="inputs" type="text" id="Uname" name="name" required>
+        <input type="submit" name="OTP" value="Get OTP" id="submit_btn1" class="inputs"><br><br>
+        <label for="Uname" class="inputs"> OTP : </label> <br> <input class="inputs" type="password" id="Upassword" name="pass" required><br>
+        <input type="submit" name="Login Now" value="Continue" id="submit_btn" class="inputs"><br>
+    </div>
+
+
+    <div id="Signup" class="input-group">
+        <h3><b>New Password</b></h3><br>
+        <label for="Uname" class="inputs"> New Password : </label> <br> <input class="inputs" type="text" id="Uname" name="name" required>
+        <label for="Ucpassword" class="inputs"> Confirm Password : </label> <br> <input class="inputs" type="password" id="Ucpassword" name="pass" required><br>
+        <input type="submit" name="Login Now" value="Submit" id="submit_btn" class="inputs"><br>
+    </div>
+   </div>
+</div>
+</body>
+</html>
