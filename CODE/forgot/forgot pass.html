@@ -132,7 +132,7 @@
         <label for="Uname" class="inputs"> Email : </label><input class="inputs" type="text" id="Uname" name="name" required>
         <input type="submit" name="OTP" value="Get OTP" id="submit_btn1" class="inputs"><br><br>
         <label for="Uname" class="inputs"> OTP : </label> <br> <input class="inputs" type="password" id="Upassword" name="pass" required><br>
-        <input type="submit" name="Login Now" value="Continue" id="submit_btn" class="inputs"><br>
+        <input type="submit" name="Login Now" value="Continue" id="submit_btn" class="inputs" onclick="changeBack()"><br>
     </div>
 
 
@@ -144,5 +144,17 @@
     </div>
    </div>
 </div>
+    <script>
+   
+        let login = document.getElementById('Login');
+        let signUp = document.getElementById('Signup');
+
+        function changeBack(){
+                login.style.left = "-420px";
+                signUp.style.left = "0px";
+            }
+
+        }
+    </script>
 </body>
 </html>
