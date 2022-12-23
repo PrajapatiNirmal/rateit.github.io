@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/20a4a662a5.js" crossorigin="anonymous"></script>
+    <title>Rate It</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap');
+*{
+   margin: 0;
+   padding: 0;
+}
+.main_container{
+   height: 100vh;
+   width: 100vw;
+   background-color: #a3acada6;
+   position: absolute;
+
+}
+.form-box{
+    height: 420px;
+    width: 400px;
+    background-color: white;
+    position: relative;
+    margin: 6% auto;padding: 5px;
+     overflow: hidden; 
+     transition: 0.3s;
+}
+.button-box{
+    width:400px;
+    height:30px;
+    position: relative;
+    /* box-shadow: 00 10px 9px #ff61241f; */
+    border-radius: 3px;
+    margin-top:15px;
+}
+.upper-btn{
+    padding:  7.6px 77.7px;
+    position: relative;
+    cursor: pointer;
+    background: transparent;
+    border: 0; outline: none;
+    font-size: 13px;
+    cursor: pointer;
+}
+#btn{
+    top: 0;
+    left:0;
+    position: absolute;
+    width:200px;
+    height:100%;
+    background: linear-gradient(to right, #ff105f,#ffad06);
+    border-radius: 20px;
+    transition: .5s;
+}
+.input-group{
+    top:80px;
+    position: absolute;
+    width: 280px;
+    margin-left: 9px;
+    transition: .3s;
+}
+.inputs{
+    margin-top: 5px;
+    margin-bottom: 12px;
+    width: 300px;
+    height: 25px;
+    margin-left: 35px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: 'Unbounded', cursive;
+    letter-spacing: 1px;
+    font-weight: bolder;
+}
+#Uname, #Upassword, #Ucpassword, #Umail, #RUpassword, #RUcpassword{
+    border: 1.5px solid gray;
+    padding-left: 10px;
+    background-color: #a3acada6;
+}
+#fpassword{
+    text-decoration: none;
+    color:rgb(255, 0, 0);
+}
+#fpassword:hover{
+    color:black;
+}
+#submit_btn{
+    height: 35px;
+    width:312px;
+    margin-top: 20px;
+    background-color:rgb(237, 75, 75);
+    border: 1.5px solid gray;
+    color: white;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+#submit_btn:hover{
+    background-color: rgb(145, 13, 13);
+}
+
+#fpassword:hover{
+    color: rgb(145, 13, 13);
+}
+
+#low_lbl{
+    letter-spacing: 0px;
+    margin-left: 78px;
+}
+.lower-btn{
+    padding-top:7px;
+    background-color: white;
+    border:none;
+    color:#3d3ddc;
+    font-size:12px;
+    cursor: pointer;
+    /* font-weight: 400; */
+    font-family: 'Unbounded', cursive;
+}
+.social-media{
+    font-size: 32px;
+    margin-left: 115px;
+    margin-top: 30px;
+    
+}
+.social-media i{
+   padding-right: 10px;
+   cursor: pointer;
+   color:black;
+}
+.social-media i:hover{
+   color:red;
+}
+#Login{
+    left:0px;
+}
+
+
+
+#Signup{
+    left:420px;
+}
+#umail{
+    background-color: #a3acada6;
+    width: 100px;
+}
+</style>
+</head>
+<body>
+    <div class="main_container">
+    <div class="form-box">
+    <div class="button-box">
+        <div id="btn"></div>
+    <button type="button" class="upper-btn" onclick="changeBack()">Log In</button>
+    <button type="button" class="upper-btn" onclick="changeBack()">Register</button>
+    </div>
+    <div id="Login" class="input-group">
+
+
+        <form>
+        <label for="Uname" class="inputs"> Username : </label> <br> 
+        <input class="inputs" type="text" id="Uname" name="name" tabindex="1" required><br><br>
+        
+        <label for="Uname" class="inputs"> Password : </label> <br> 
+        <input class="inputs" type="password" id="Upassword" name="pass" tabindex="2" required><br>
+        
+       <a href="" class="inputs" id="fpassword">Forgot Password?</a><br>
+        <button  id="submit_btn" class="inputs" > submit </button>
+        </form>
+
+
+        
+        <label for="Uname" class="inputs" id="low_lbl"> Not a Member? </label>
+        <button type="button" class="lower-btn" onclick="changeBack()"><b> Signup Now</b></button> <br> 
+
+        
+
+        <div class="social-media">
+           <a href="" ><i class="fa-brands fa-facebook"></i></a>
+           <a href=""> <i class="fa-brands fa-instagram"></i></a>
+           <a href=""> <i class="fa-brands fa-square-twitter"></i></a>
+        </div>
+
+    </div>
+    <div id="Signup" class="input-group">
+
+        <form action="#" method="post" >
+            
+        <label for="Uname" class="inputs"> Username : </label> <br> 
+        <input class="inputs" type="text" id="Uname" name="name" >
+        
+        <label for="Umail" class="inputs"> Email :</label><br> 
+        <input type="email" class="inputs" id="Umail" auto>
+        
+        <label for="Upassword" class="inputs"> Password : </label> <br> 
+        <input class="inputs" type="password" id="RUpassword" name="pass" >
+        
+        <label for="Ucpassword" class="inputs"> Confirm Password : </label> <br> 
+        <input class="inputs" type="password" id="RUcpassword" name="pass" ><br>
+        
+        <input type="submit" name="Login Now" value="Register" id="submit_btn" class="inputs"><br>
+        <div class="social-media">
+            <a href="" ><i class="fa-brands fa-facebook"></i></a>
+            <a href=""> <i class="fa-brands fa-instagram"></i></a>
+            <a href=""> <i class="fa-brands fa-square-twitter"></i></a>
+         </div>
+    </form>
+    </div>
+   </div>
+</div>
+</div>
+
+
+    <script type="text/javascript">
+        
+        let upperButtons = document.getElementsByClassName(".upper-btn");
+        let buttonBack = document.getElementById('btn');
+        let left = 0;
+        let login = document.getElementById('Login');
+        let signUp = document.getElementById('Signup');
+        let container = document.querySelector(".form-box");
+
+        function changeBack(){
+            if (left == 0) {
+                buttonBack.style.left = "200px";
+                login.style.left = "-420px";
+                signUp.style.left = "0px";
+                container.style.height = "500px";
+                left = 200;
+            }
+            else{
+                buttonBack.style.left = 0 + "px";
+                signUp.style.left = "420px";
+                login.style.left = "0px";
+                left = 0;
+                container.style.height = "420px";
+            }
+        }
+
+        function validateReg(){
+            const userid = document.getElementById('Uname').value;
+            const password = document.getElementById('Upassword');
+
+            if (password.value == "") 
+            {
+                password.style.border = "2px solid red";
+            }
+            else{
+                password.style.borderColor = "black"
+            }
+            
+        }
+
+        function validate(){
+            return false;
+        }
+
+        
+    </script>
+</body>
+</html>
