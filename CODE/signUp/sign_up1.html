@@ -158,15 +158,18 @@
     <div id="Login" class="input-group">
 
 
-        <form>
-        <label for="Uname" class="inputs"> Username : </label> <br> 
-        <input class="inputs" type="text" id="Uname" name="name" tabindex="1" required><br><br>
+        <form action="" onsubmit="return validateLogin()">
+        <label for="Uname" class="inputs"> UserId or Email : </label> <br> 
+        <input class="inputs" type="text" id="Uname" name="name" tabindex="1" placeholder="E.x. : user#123" >
+        <span id="alertUname"></span>
+        <br><br>
         
         <label for="Uname" class="inputs"> Password : </label> <br> 
-        <input class="inputs" type="password" id="Upassword" name="pass" tabindex="2" required><br>
-        
-       <a href="../forgot/forgotpass.html" class="inputs" id="fpassword">Forgot Password?</a><br>
-        <button  id="submit_btn" class="inputs" > submit </button>
+        <input class="inputs" type="password" id="Upassword" name="pass" tabindex="2" ><br>
+        <span id="alertPass"></span>
+
+        <a href="../forgotpass/forgot%20pass.html" class="inputs" id="fpassword">Forgot Password?</a><br>
+        <button  id="submit_btn" class="inputs"> submit </button>
         </form>
 
 
@@ -175,37 +178,41 @@
         <button type="button" class="lower-btn" onclick="changeBack()"><b> Signup Now</b></button> <br> 
 
         
-
-         <div class="social-media">
-            <a href="https://www.facebook.com/profile.php?id=100088785978857" ><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/rateit_group/"> <i class="fa-brands fa-instagram"></i></a>
-            <a href="https://stackoverflow.com/users/20854115/rate-it"> <i class="fa-brands fa-stack-overflow"></i></a>
+        <div class="social-media">
+            <a href="https://www.facebook.com/profile.php?id=100088785978857" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/rateit_group/" target="_blank"> <i class="fa-brands fa-instagram"></i></a>
+            <a href="https://stackoverflow.com/users/20854115/rate-it" target="_blank"> <i class="fa-brands fa-stack-overflow"></i></a>
          </div>
 
     </div>
     <div id="Signup" class="input-group">
 
-        <form action="#" method="post" >
-            
-        <label for="Uname" class="inputs"> Username : </label> <br> 
-        <input class="inputs" type="text" id="Uname" name="name" >
+        <form action="" id="register" onsubmit="return validateReg()">
+
+        <label for="URname" class="inputs"> Username : </label> <br> 
+        <input class="inputs" type="text" id="URname" name="name" tabindex="1" >
         
-        <label for="Umail" class="inputs"> Email :</label><br> 
-        <input type="email" class="inputs" id="Umail" auto>
+        <label for="URmail" class="inputs"> Email :</label><br> 
+        <input type="email" class="inputs" id="URmail" autocomplete="off" tabindex="2" >
+        <span id="emailAlert"></span>
         
-        <label for="Upassword" class="inputs"> Password : </label> <br> 
-        <input class="inputs" type="password" id="RUpassword" name="pass" >
+        <label for="URpassword" class="inputs"> Password : </label> <br> 
+        <input class="inputs" type="password" id="URpassword" name="pass" tabindex="3" >
+        <span id="alertRPass"></span>
         
-        <label for="Ucpassword" class="inputs"> Confirm Password : </label> <br> 
-        <input class="inputs" type="password" id="RUcpassword" name="pass" ><br>
+        <label for="URcpassword" class="inputs"> Confirm Password : </label> <br> 
+        <input class="inputs" type="password" id="URcpassword" name="pass" tabindex="4" ><br>
+        <span id="bothCheck"></span>
         
-        <input type="submit" name="Login Now" value="Register" id="submit_btn" class="inputs"><br>
+        <input type="submit" name="Login Now" value="Register" id="submit_btn" tabindex="5" class="inputs"><br>
+        </form>
+        
         <div class="social-media">
-            <a href="https://www.facebook.com/profile.php?id=100088785978857" ><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/rateit_group/"> <i class="fa-brands fa-instagram"></i></a>
-            <a href="https://stackoverflow.com/users/20854115/rate-it"> <i class="fa-brands fa-stack-overflow"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100088785978857" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/rateit_group/" target="_blank"> <i class="fa-brands fa-instagram"></i></a>
+            <a href="https://stackoverflow.com/users/20854115/rate-it" target="_blank"> <i class="fa-brands fa-stack-overflow"></i></a>
          </div>
-    </form>
+
     </div>
    </div>
 </div>
@@ -214,12 +221,20 @@
 
     <script type="text/javascript">
         
-        let upperButtons = document.getElementsByClassName(".upper-btn");
-        let buttonBack = document.getElementById('btn');
+        const upperButtons = document.getElementsByClassName(".upper-btn");
+        const buttonBack = document.getElementById('btn');
         let left = 0;
-        let login = document.getElementById('Login');
-        let signUp = document.getElementById('Signup');
-        let container = document.querySelector(".form-box");
+        const login = document.getElementById('Login');
+        const signUp = document.getElementById('Signup');
+        const container = document.querySelector(".form-box");
+        const register = document.getElementById('submit_btn');
+        const eAlert = document.getElementById('emailAlert');
+        const alertUname = document.getElementById('alertUname');
+        const pAlert = document.getElementById('alertPass');
+        const passAlert = document.getElementById('alertRPass');
+        const bothpass = document.getElementById('bothCheck')
+
+        document.getElementById('Uname').focus();
 
         function changeBack(){
             if (left == 0) {
@@ -227,36 +242,192 @@
                 login.style.left = "-420px";
                 signUp.style.left = "0px";
                 container.style.height = "500px";
+                document.getElementById('URname').focus();
                 left = 200;
             }
             else{
                 buttonBack.style.left = 0 + "px";
                 signUp.style.left = "420px";
                 login.style.left = "0px";
+                document.getElementById('Uname').focus();
                 left = 0;
                 container.style.height = "420px";
             }
         }
 
-        function validateReg(){
-            const userid = document.getElementById('Uname').value;
-            const password = document.getElementById('Upassword');
+        function validateLogin(){
+                                                            // Validation of UserID or Email
+        const userName = document.getElementById('Uname').value;
+        const pass     = document.getElementById('Upassword').value;
+            // let reg = new RegExp(/@/g);
+            // if (reg.test(userName) == true) {
+            //     if(validateEmail(userName,alertUname) == true){
+            //         console.log("successfully checked");
+            //     }
+            //     else{
+            //         console.log("enter correct")
+            //         return false;    
+            //     }
+                
+            // }
+            // else{
+            //     return validateUserName(userName);
+            // }
 
-            if (password.value == "") 
-            {
-                password.style.border = "2px solid red";
-            }
-            else{
-                password.style.borderColor = "black"
-            }
-            
+        return checkPassword(pass,pAlert); 
+
         }
 
-        function validate(){
+
+        function validateReg(){
+            const pass = document.getElementById('URpassword');
+            const cpass= document.getElementById('URcpassword');
+                                                            /// Validation of user name
+        return checkName();
+                                                            /// Validation of password
+        return checkPassword(pass.value,passAlert);
+                                                            /// Validation of confirm password
+        return validatePassword();
+                                                            /// Validation of email
+
+        const toMail = document.getElementById('URmail').value;
+        return validateEmail(toMail,eAlert);
+        
+        
+
+}
+
+
+
+    function validateEmail(toMail,emailAlert){
+        if (toMail == "") {
+            eAlert.innerText = "Please Enter Your Email";
+            return false;
+        }
+        else{
+            const reg = new RegExp(/@/g);
+            flag = reg.test(toMail);
+            // console.log("Flag value = "+flag)
+
+            if (flag == true) {
+                const index = toMail.indexOf("@");
+                
+                // console.log("index of @ = "+index)
+                if (index > 0 ) {
+
+                    console.log("test = "+toMail.charAt(0))
+                     if (!(toMail.charAt(0) >= 'a' && toMail.charAt(0) <= 'z' )) {
+                         emailAlert.innerText = "Invalid Email";
+                        //alertUname.innerText = "Invalid Email";
+                        return false;
+                     }
+
+                     console.log("test -1  = "+toMail.indexOf('.'))
+                     if (toMail.indexOf('.')  != (-1)) {
+                            const i = toMail.lastIndexOf('.');
+
+                            console.log("test -2 ")
+                            // console.log("index of . = "+i)
+                            if (i == (toMail.length-3) || i == (toMail.length-4)) {
+                                // console.log(toMail.charAt(toMail.length-3))
+                                // console.log(toMail.charAt(toMail.length-4))
+                                return true;
+                            }
+                            else{
+                            // document.getElementById('Umail').focus()
+                            return false;
+                            }       
+                      }//vinay@koshti.com (16) 
+                      else{
+                         emailAlert.innerText = "Invalid Email"; return false;
+                      }
+                }
+                else{
+                    emailAlert.innerText = "Invalid Email"
+                    // document.getElementById('Umail').focus()
+                    return false;
+                }
+            }
+            else{
+                emailAlert.innerText = "Invalid Email"
+                // document.getElementById('Umail').focus()
+                return false;
+            }
+        }
+    } 
+
+    function validateUserName(UserName){
+        let reg = new RegExp(/[^a-zA-Z0-9 | #]/g);
+        
+        if (reg.test(UserName) == true) {
+            alertUname.innerText = "Please Enter Valid Name";
             return false;
         }
 
+        // console.log(UserName.substring(0,5));
+
+        if (UserName.length <= 5) {
+            alertUname.innerText = "Entered Invalid User Name";
+            return false;
+        }
+        if (UserName.substring(0,5) != "user#") {
+            alertUname.innerText = "Invalid UID. Must start with : \"user#\"";
+            return false;
+        }
+    }
+
+      function checkPassword(pass,pAlert){
         
+
+        if (pass.length <= 7) {
+            pAlert.innerText = "Password must between 8 to 15 letters";
+            return false;
+        }
+        else if (pass.length >= 8 && pass.length <= 15) {
+            var reg = new RegExp(/[$&+,:;=?@#|'<>.-^*()%!]/g);
+            var flag = reg.test(pass);
+            console.log("flag = "+flag)
+            
+            if (flag == false)
+            { 
+              pAlert.innerText = "Please use any special character";
+              return false;
+            }
+            
+            else if(flag == true) {pAlert.innerText = "";
+
+            var reg = new RegExp(/[0-9]/g);
+            var flag = reg.test(pass);
+            // console.log("flag = "+flag)
+            
+            if (flag == false) {
+                pAlert.innerText = "password must contain digit";
+                return false;
+            }
+            else pAlert.innerText = "";
+            }
+        }
+    }
+
+
+    function validatePassword(){
+        const pass = document.getElementById('URpassword').value;
+        const cpass = document.getElementById('URcpassword').value;
+
+        if (pass == "" || cpass == "" ) {
+            bothpass.innerText = "Please Enter The Password";
+        }
+        if (pass == cpass) {
+            alert("Password changed successfully ")
+            bothpass.innerText = "";
+            //window.location.href = "../index.html"
+        }
+        else{
+            document.getElementById('URcpassword').style.borderColor = "red";
+            bothpass.innerText = "Both password are not same";
+        }
+    }
+
     </script>
 </body>
 </html>
