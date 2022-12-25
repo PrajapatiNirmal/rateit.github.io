@@ -441,6 +441,7 @@
 
         if (pass == "" || cpass == "" ) {
             bothpass.innerText = "Please Enter The Password";
+            return false;
         }
         if (pass == cpass) {
             alert("Password changed successfully ")
@@ -450,6 +451,7 @@
         else{
             document.getElementById('URcpassword').style.borderColor = "red";
             bothpass.innerText = "Both password are not same";
+            return false;
         }
     }
 
