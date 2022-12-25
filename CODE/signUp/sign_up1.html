@@ -271,10 +271,12 @@
                 
             }
              else{
-                 return validateUserName(userName);
+                 if(validateUserName(userName) == false)
+                    return false;
              }
 
-        return checkPassword(pass,pAlert); 
+        if(checkPassword(pass,pAlert) == false)
+            return false;
 
         }
 
