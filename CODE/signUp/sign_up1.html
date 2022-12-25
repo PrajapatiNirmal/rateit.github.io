@@ -351,6 +351,7 @@
                             if (i == (toMail.length-3) || i == (toMail.length-4)) {
                                 // console.log(toMail.charAt(toMail.length-3))
                                 // console.log(toMail.charAt(toMail.length-4))
+                                emailAlert.innerText = "";
                                 return true;
                             }
                             else{
@@ -394,6 +395,7 @@
             alertUname.innerText = "Invalid UID. Must start with : \"user#\"";
             return false;
         }
+            alertUname.innerText="";
     }
 
       function checkPassword(pass,pAlert){
