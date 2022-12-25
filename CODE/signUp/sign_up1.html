@@ -302,7 +302,15 @@
 
 }
 
+    function checkName(){
+       const name = document.getElementById('URname').value;
+       let reg = new RegExp(/[^a-b | ^A-Z]/g);
+      
+       if(reg.test(name) == true){
+           return false;
+       }
 
+}
 
     function validateEmail(toMail,emailAlert){
         if (toMail == "") {
