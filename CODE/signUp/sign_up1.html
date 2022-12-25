@@ -309,7 +309,10 @@
        const name = document.getElementById('URname').value;
        const nameAlert = document.getElementById("usernameAlert");
        let reg = new RegExp(/[^a-z | ^A-Z]/g);
-      
+     
+       if(name.length <= 2){
+           nameAlert.innerText = "Please enter with surname";
+       }
        if(reg.test(name) == true){
            nameAlert.innerText = "Name must be in letters";
            return false;
