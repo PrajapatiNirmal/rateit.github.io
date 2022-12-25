@@ -283,17 +283,20 @@
             const pass = document.getElementById('URpassword');
             const cpass= document.getElementById('URcpassword');
                                                             /// Validation of user name
-        return checkName();
+        if(checkName() == false)
+          return false;
                                                             /// Validation of password
-        return checkPassword(pass.value,passAlert);
-                                                            /// Validation of confirm password
-        return validatePassword();
-                                                            /// Validation of email
+        if(checkPassword(pass.value,passAlert) == false)
+           return false;
+
+        if(validatePassword() == false)                                                /// Validation of confirm password ;
+          return false;                                                 /// Validation of email
 
         const toMail = document.getElementById('URmail').value;
-        return validateEmail(toMail,eAlert);
+        if(validateEmail(toMail,eAlert) == false)
+          return false;
         
-        
+        return true;
 
 }
 
