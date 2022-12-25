@@ -191,7 +191,8 @@
 
         <label for="URname" class="inputs"> Username : </label> <br> 
         <input class="inputs" type="text" id="URname" name="name" tabindex="1" >
-        
+        <span id="usernameAlert"></span>
+
         <label for="URmail" class="inputs"> Email :</label><br> 
         <input type="email" class="inputs" id="URmail" autocomplete="off" tabindex="2" >
         <span id="emailAlert"></span>
@@ -287,16 +288,18 @@
                                                             /// Validation of user name
         if(checkName() == false)
           return false;
-                                                            /// Validation of password
+
+        const toMail = document.getElementById('URmail').value;
+        if(validateEmail(toMail,eAlert) == false)
+          return false;                
+                          /// Validation of password
         if(checkPassword(pass.value,passAlert) == false)
            return false;
 
         if(validatePassword() == false)                                                /// Validation of confirm password ;
           return false;                                                 /// Validation of email
 
-        const toMail = document.getElementById('URmail').value;
-        if(validateEmail(toMail,eAlert) == false)
-          return false;
+        
         
         return true;
 
@@ -304,9 +307,11 @@
 
     function checkName(){
        const name = document.getElementById('URname').value;
+       const nameAlert = document.getElementById("usernameAlert");
        let reg = new RegExp(/[^a-z | ^A-Z]/g);
       
        if(reg.test(name) == true){
+           nameAlert.innerText = "Name must be in letters");
            return false;
        }
 
