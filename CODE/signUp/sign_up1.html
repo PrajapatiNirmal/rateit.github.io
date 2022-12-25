@@ -259,20 +259,20 @@
                                                             // Validation of UserID or Email
         const userName = document.getElementById('Uname').value;
         const pass     = document.getElementById('Upassword').value;
-            // let reg = new RegExp(/@/g);
-            // if (reg.test(userName) == true) {
-            //     if(validateEmail(userName,alertUname) == true){
-            //         console.log("successfully checked");
-            //     }
-            //     else{
-            //         console.log("enter correct")
-            //         return false;    
-            //     }
+            let reg = new RegExp(/@/g);
+            if (reg.test(userName) == true) {
+               if(validateEmail(userName,alertUname) == true){
+                    console.log("successfully checked");
+                 }
+                 else{
+                     console.log("enter correct")
+                     return false;    
+                 }
                 
-            // }
-            // else{
-            //     return validateUserName(userName);
-            // }
+            }
+             else{
+                 return validateUserName(userName);
+             }
 
         return checkPassword(pass,pAlert); 
 
