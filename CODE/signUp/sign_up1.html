@@ -410,7 +410,8 @@
         }
         else if (pass.length >= 8 && pass.length <= 15) {
             var reg = new RegExp(/[$&+,:;=?@#|'<>.-^*()%!]/g);
-            var flag = reg.test(pass);
+            var flag = false;
+            flag = reg.test(pass);
             console.log("flag = "+flag)
             
             if (flag == false)
@@ -418,7 +419,7 @@
               pAlert.innerText = "Please use any special character";
               return false;
             }
-            
+            else{
             pAlert.innerText = "";
 
             var reg = new RegExp(/[0-9]/g);
@@ -430,7 +431,7 @@
                 return false;
             }
             else pAlert.innerText = "";
-            
+            }
         }
         else{
             pAlert.innerText ="Length Must not greater than 15";
