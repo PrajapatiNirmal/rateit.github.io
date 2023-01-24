@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate it | Home Page</title>
+    <script src="https://kit.fontawesome.com/c2a4c35825.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Unbounded', cursive;
+        }
+
+
+        :root {
+            --header-color: white;
+            --contain-color: #a3acada6;
+            --footer-color: black;
+        }
+
+        nav {
+            height: 8vh;
+            width: 100%;
+            background-color: var(--header-color);
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid black;
+            margin-bottom: 5px;
+            box-shadow: 0px 5.3px 10px #888888;
+            position: fixed;
+            top:0px;
+            z-index: 1;
+        }
+
+        .main_logo {
+            height: 40px;
+            width: 60px;
+            margin-left: 10px;
+            transition: all 0.3s;
+        }
+
+        .main_logo:hover {
+            transform: scale(1.05);
+        }
+
+        nav ul li {
+            display: inline-block;
+            text-decoration: none;
+            padding-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 50px;
+        }
+
+        .dropdown-content {
+            display: none;
+            height: 12vh;
+            width: 8vw;
+            position: absolute;
+            left: 0px;
+            background-color: var(--header-color);
+            z-index: 1;
+            padding-left: 7px;
+            padding-top: 10px;
+            margin-top: 0.2vh;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            font-size: 11px;
+            font-weight: 3000;
+            color: black;
+        }
+
+        .dropdown-content a:hover {
+            color: #ffad06;
+        }
+
+        .dropdown-text:hover .dropdown-content {
+            display: block;
+            background-color: white;
+        }
+
+        .header-content {
+            color: black;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .header-content:hover {
+            color: #ffad06;
+            transition: 0.3s;
+        }
+
+        #search input {
+            border-radius: 0px;
+            height: 25px;
+            margin-left: 120px;
+            padding: 10px;
+            border-bottom: 1.5px solid black;
+            border-top-style: hidden;
+            border-left-style: hidden;
+            border-right-style: hidden;
+        }
+        #search input:focus{
+            outline: none;
+        }
+
+        #button {
+            margin-left: 180px;
+        }
+
+        .btn {
+            height: 28px;
+            width: 130px;
+            background: transparent;
+            border-radius: 3px;
+            transition: all 0.3s;
+            margin: 2px;
+            background-color: black;
+            color: white;
+            box-shadow: 2px 2px 6px #888888;
+        }
+
+        /* .btn:hover {
+            transform: scale(1.03);
+            background-color: black;
+            color: white;
+            border: none;
+        } */
+
+
+ /*       .container {
+            min-height: calc(100vh - 10vh - 54vh);
+            width: 100%;
+            background-color: var(--contain-color);
+        }*/
+
+        footer {
+            height: 56vh;
+            width: 100%;
+            background-color: var(--footer-color);
+            padding: 8px;
+        }
+
+        #footpart1 {
+            color: white;
+            font-size: 13px;
+            margin-top: 40px;
+        }
+
+        #footpart1 a {
+            text-decoration: none;
+            color: grey;
+            font-size: 12px;
+        }
+
+        #footpart1 a:hover {
+            color: white;
+        }
+
+        #footpart2 {
+            margin-top: 60px;
+            margin-left: 30px;
+            display: flex;
+        }
+
+        #cont1 {
+            color: white;
+            font-size: 13px;
+        }
+
+        #cont1 p {
+            margin-bottom: 10px;
+        }
+
+        .about-text {
+            color: grey;
+            text-decoration: none;
+            font-size: 11px;
+        }
+
+        .about-text:hover {
+            color: white;
+        }
+
+        #cont2 {
+            color: white;
+            font-size: 13px;
+            margin-left: 100px;
+        }
+
+        #cont2 p {
+            margin-bottom: 10px;
+        }
+
+        #cont3 {
+            color: white;
+            font-size: 13px;
+            margin-left: 100px;
+        }
+
+        #cont3 p {
+            margin-bottom: 10px;
+        }
+
+        #cont4 {
+            margin-left: 100px;
+            font-size: 13px;
+            color: white;
+        }
+
+        #cont4 p {
+            margin-bottom: 10px;
+        }
+
+        #cont5 {
+            margin-left: 23vw;
+            font-size: 13px;
+            color: white;
+        }
+
+        #cont5 p {
+            margin-bottom: 10px;
+        }
+
+        #footpart3 {
+            margin-left: 10px;
+            margin-top: 10px;
+            display: flex;
+        }
+
+        #footpart3 p {
+            color: white;
+            font-size: 13px;
+            margin-right: 85px;
+            padding-bottom: 5px;
+            margin-left: 85px;
+            letter-spacing: 0.5px;
+        }
+
+        #social {
+            display: flex;
+        }
+
+        #social a img {
+            margin-left: 5px;
+            height: 37px;
+            transition: all 0.3s;
+        }
+
+        #social a img:hover {
+            transform: scale(1.07);
+        }
+
+        /*------- Main page styling ---------*/
+        .container {
+            min-height: calc(100vh - 10vh - 17vh);
+            height:auto;
+            background-color: var(--contain-color);
+            margin-top: 8vh;
+        }
+
+        .flex-1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .box {
+            height: 40vh;
+            width:55vh;
+            background-color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .sub-boxes {
+            height: 15vh;
+            width: 48vh;
+            background-color: white;
+            text-align: left;
+            position: relative;
+            padding: 10px;
+        }
+
+
+        .flex-2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+
+        .rate-label {        /* --- rating star styling*/
+            position: absolute;
+            top: 10px;
+            left: 230px;
+        }
+
+        .star-block {
+            position: absolute;
+            left: 230px;
+            top: 45px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }   /* --- rating star styling completes*/
+
+        /* main page styling completes here */
+
+        @media (min-width: 1200px) and (max-width:1330px) {
+            footer {
+                height: 70vh;
+                padding: 5px;
+            }
+
+            #footpart1 {
+                margin-top: 80px;
+            }
+
+            #search input {
+                margin-left: 100px;
+                width: 225px;
+            }
+
+            #button {
+                margin-left: 70px;
+            }
+
+        }
+
+        @media (min-width: 1100px) and (max-width:1200px) {
+            footer {
+                height: 70vh;
+                width: 100vw;
+                padding: 5px;
+            }
+
+            #footpart1 {
+                margin-top: 50px;
+            }
+
+            #cont5 {
+                margin-left: 17vw;
+            }
+
+            #search input {
+                margin-left: 40px;
+            }
+
+            #button {
+                margin-left: 100px;
+            }
+
+            .dropdown {
+                margin-left: 15px;
+            }
+
+            nav ul li {
+                padding-left: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img class="main_logo" src="https://raw.githubusercontent.com/GP-GANG/rateit.github.io/main/Other%20Files/photos/logo.png" alt="RATE-IT.COM">
+            <ul>
+                <div class="dropdown">
+                    <li>
+                        <div class="dropdown-text header-content">
+                            <b>Polls</b>
+                            <div class="dropdown-content">
+                                <a href="#">Previous Polls</a>
+                                <a href="#">Recent Polls</a>
+                                <a href="#">Upcoming Polls</a>
+                            </div>
+                        </div>
+                    </li>
+                </div> &nbsp;
+
+                <li><a href="#" class="header-content"><b>Companies</b></a></li>
+                <li><a href="#" class="header-content"><b>About Us</b></a></li>
+                <li><a href="#" class="header-content"><b>Contact Us</b></a></li>
+                <li><a href="#" class="header-content"><b>Review Us</b></a></li>
+            </ul>
+
+            <div id="search">
+                <input type="search" placeholder="Search . . . .">
+            </div>
+
+            <div id="button">
+                <button class="btn" onclick=""><b>&nbsp;Log In &nbsp;/&nbsp; Sign In&nbsp;</b></button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="container"><br><br>
+            <div class="flex-1">
+                <div class="box">
+                    <div class="s1-box1 sub-boxes">
+                        <h3>TCS</h3>
+                        <img src="TCS.png" height="25px">
+
+                        <div class="rate-label"> <!--rating stars div block-->
+                            <h3>Ratings</h3>
+                        </div>
+                        <div class="star-block">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
+                        </div>
+                    </div>                <!--rating stars div block completes-->
+
+                    <div class="s2-box1 sub-boxes">
+                        <h3>Infosys</h3>
+                        <img src="infosys.png" height="45px">
+                        <div class="rate-label"> <!--rating stars div block-->
+                            <h3>Ratings</h3>
+                        </div>
+                        <div class="star-block">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="s1-box2 sub-boxes">
+                        <h3>Swiggy</h3>
+                        <img src="swiggy.png" height="40px">
+                        <div class="rate-label"> <!--rating stars div block-->
+                            <h3>Ratings</h3>
+                        </div>
+                        <div class="star-block">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
+                        </div>
+                    </div>
+                    <div class="s2-box2 sub-boxes">
+                        <h3>Zomato</h3>
+                        <img src="zomato.png" height="40px">
+                        <div class="rate-label"> <!--rating stars div block-->
+                            <h3>Ratings</h3>
+                        </div>
+                        <div class="star-block">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="s1-box3 sub-boxes">
+                        <h3>Instagram</h3>
+                        <img src="instagram.png" height="45px">
+                        <div class="rate-label"> <!--rating stars div block-->
+                            <h3>Ratings</h3>
+                        </div>
+                        <div class="star-block">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
+                        </div>
+                    </div>
+                    <div class="s2-box3 sub-boxes">
+                        <h3>Facebook</h3>
+                        <img src="facebook.png" height="45px">
+                        <div class="rate-label"> <!--rating stars div block-->
+                            <h3>Ratings</h3>
+                        </div>
+                        <div class="star-block">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
+                        </div>
+                    </div>
+                </div>
+            </div> <br><br>
+
+            <div class="flex-2">
+                <div class="box">
+                    <div class="s1-box4 sub-boxes">
+                        <h3>Fastrack</h3>
+                        <img src="fastrack.png" height="40px">
+                        <div class="rate-label"> <!--rating stars div block-->
+                            <h3>Ratings</h3>
+                        </div>
+                        <div class="star-block">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
+                        </div>
+                    </div>
+                    <div class="s2-box4 sub-boxes">
+                        <h3>Titan</h3>
+                        <img src="titan.png" height="40px">
+                        <div class="rate-label"> <!--rating stars div block-->
+                            <h3>Ratings</h3>
+                        </div>
+                        <div class="star-block">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="s1-box5 sub-boxes">
+                        <h3>Amazon</h3>
+                        <img src="amazon.png" height="45px">
+                        <div class="rate-label"> <!--rating stars div block-->
+                            <h3>Ratings</h3>
+                        </div>
+                        <div class="star-block">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
+                        </div>
+                    </div>
+                    <div class="s2-box5 sub-boxes">
+                        <h3>Flipkart</h3>
+                        <img src="flipkart.png" height="45px">
+                        <div class="rate-label"> <!--rating stars div block-->
+                            <h3>Ratings</h3>
+                        </div>
+                        <div class="star-block">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="s1-box6 sub-boxes">
+                        <h3>PayTm</h3>
+                        <img src="paytm.png" height="45px">
+                        <div class="rate-label"> <!--rating stars div block-->
+                            <h3>Ratings</h3>
+                        </div>
+                        <div class="star-block">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
+                        </div>
+                    </div>
+                    <div class="s2-box6 sub-boxes">
+                        <h3>Google Pay</h3>
+                        <img src="gpay.png" height="45px" width="60px">
+                        <div class="rate-label"> <!--rating stars div block-->
+                            <h3>Ratings</h3>
+                        </div>
+                        <div class="star-block">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+
+        </div>
+    </main>
+
+
+    <footer>
+
+        <div id="footpart3">
+            <p id="tgp">Total Generated polls:- 50,332</p>
+            <p id="trc">Total Registered Companies:- 2,54,574</p>
+            <p id="tlu">Total Logined Users:- 65,64,732</p>
+        </div>
+
+        <div id="footpart2">
+
+            <div id="cont1">
+                <p>Useful Links</p>
+                <dd><a href="" class="about-text">previous Polls</a></dd>
+                <dd><a href="" class="about-text">recent Polls</a></dd>
+                <dd><a href="" class="about-text">Up-Coming Polls</a></dd>
+                <dd><a href="" class="about-text">Tranding Polls</a></dd>
+                <dd><a href="" class="about-text">Companies</a></dd>
+                <dd><a href="" class="about-text">My Profile</a></dd>
+                <dd><a href="" class="about-text">About</a></dd>
+                <dd><a href="" class="about-text">Blog</a></dd>
+            </div>
+
+            <div id="cont2">
+                <p>Rate It</p>
+                <dd><a href="" class="about-text">Feedback</a></dd>
+                <dd><a href="" class="about-text">Contact Us</a></dd>
+                <dd><a href="" class="about-text">Rate It for Employers</a></dd>
+            </div>
+
+            <div id="cont3">
+                <p>Rete it Developers</p>
+                <dd class="about-text">Vinay Koshti</dd>
+                <dd class="about-text">Neesarg Soni</dd>
+                <dd class="about-text">Dilip Suryal</dd>
+                <dd class="about-text">Priyanshu Patel</dd>
+                <dd class="about-text">Nirmal Prajapati</dd>
+                <dd class="about-text">Dhruv Shere</dd>
+            </div>
+
+            <div id="cont4">
+                <p>Help Center</p>
+                <dd><a href="" class="about-text">FAQ</a></dd>
+                <dd><a href="" class="about-text">Terms of Use</a></dd>
+                <dd><a href="" class="about-text">Privecy & Cookies</a></dd>
+            </div>
+
+            <div id="cont5">
+                <p>Follaw Us On</p>
+                <div id="social">
+                    <div>
+                        <dd><a href="https://www.facebook.com/profile.php?id=100088785978857"><img
+                                    src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/facebook.png?raw=true"></a></dd>
+                        <dd><a href="https://www.instagram.com/rateit_group/"><img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/instagram.png?raw=true"></a></dd>
+                    </div>
+                    <div>
+                        <dd><a href="https://twitter.com/rateit16"><img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/twitter.png?raw=true"></a></dd>
+                        <dd><a href="https://www.linkedin.com/in/rate-it-76513b263/"><img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/linkedin.png?raw=true"></a></dd>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footpart1">
+            TOP RATED COMPANIES:- <a href="">TATA Motors</a> | <a href="">Infosys</a> | <a href="">Facebook</a> | <a
+                href="">Jobbuzz</a> | <a href="">Adani Gas</a> | <a href="">Reliance Digital</a> | <a href="">Google</a>
+            | <a href="">Lenskart</a> | <a href="">Bharat Pay</a> | <a href="">Flipkart</a> | <a href="">Amazon</a> | <a
+                href="">Raymond</a> | <a href="">IBM</a> | <a href="">Maruti Suzuki</a> | <a href="">ICICI Bank</a> | <a
+                href="">Axis Bank</a> | <a href="">Wipro</a> | <a href="">Ultratach Cement</a> | <a href="">Ambuja
+                Cement</a> | <a href="">Cipla</a> | <a href="">Oracle</a> | <a href="">Kotak Bank</a> | <a
+                href="">Mahindra Motors</a> | <a href="">PayPal</a> | <a href="">Yamaha</a> | <a href="">Microsoft</a> |
+            <a href="">Kent</a> | <a href="">Paytm</a> | <a href="">Panasonic</a> | <a href="">HP</a> | <a href="">Mama
+                earth</a>
+        </div>
+    </footer>
+</body>
+
+</html>
