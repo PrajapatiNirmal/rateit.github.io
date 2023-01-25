@@ -39,7 +39,7 @@
         }
 
         .main_logo {
-            height: 40px;
+            height: 45px;
             width: 60px;
             margin-left: 10px;
             transition: all 0.3s;
@@ -124,13 +124,13 @@
             margin-left: 180px;
         }
 
-        .btn {
+        .header-btn {
             height: 28px;
-            width: 130px;
+            width: 140px;
             background: transparent;
             border-radius: 3px;
             transition: all 0.3s;
-            margin: 2px;
+            /* margin: 2px; */
             background-color: black;
             color: white;
             box-shadow: 2px 2px 6px #888888;
@@ -151,30 +151,31 @@
         }*/
 
         footer {
-            height: 56vh;
+            height: 60vh;
             width: 100%;
             background-color: var(--footer-color);
-            padding: 8px;
+            padding: 5px;
         }
 
-        #footpart1 {
+        #footpart3 {
             color: white;
             font-size: 13px;
             margin-top: 40px;
+            display: inline-block;
         }
 
-        #footpart1 a {
+        #footpart3 a {
             text-decoration: none;
             color: grey;
             font-size: 12px;
         }
 
-        #footpart1 a:hover {
+        #footpart3 a:hover {
             color: white;
         }
 
         #footpart2 {
-            margin-top: 60px;
+            margin-top: 30px;
             margin-left: 30px;
             display: flex;
         }
@@ -229,7 +230,7 @@
         }
 
         #cont5 {
-            margin-left: 23vw;
+            margin-left: 15vw;
             font-size: 13px;
             color: white;
         }
@@ -238,13 +239,20 @@
             margin-bottom: 10px;
         }
 
-        #footpart3 {
-            margin-left: 10px;
-            margin-top: 10px;
+        #footpart1 {
+            margin-left: 0px;
+            margin-top: 5px;
             display: flex;
+            padding-bottom: 5px;
+            /* outline-offset: 4px;
+            outline-style: solid;
+            outline-color: white;
+            outline-width: 1.5px; */
+            border-bottom: 1.5px solid white;
+        
         }
 
-        #footpart3 p {
+        #footpart1 p {
             color: white;
             font-size: 13px;
             margin-right: 85px;
@@ -268,101 +276,116 @@
         }
 
         /*------- Main page styling ---------*/
+        body{
+            background-color: #a3acada6;
+        }
+        main{
+            margin-top: 15vh;
+        }
         .container {
-            min-height: calc(100vh - 10vh - 17vh);
-            height:auto;
-            background-color: var(--contain-color);
-            margin-top: 8vh;
+            display: grid;
+            background-color:#a3acad1a;
+            width: 90vw;
+            margin-left: 5vw;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 30px;
+            box-sizing: border-box;
+            margin-bottom: 45px;
         }
 
-        .flex-1 {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
+        .items {
+            background-color: white;
+            height: 15vw;
+            width:100%;
+            position: relative;
+            border-radius: 3px;
         }
 
-        .box {
-            height: 40vh;
-            width:55vh;
-            background-color: antiquewhite;
+
+                    /* CODE BY PRO VINAY */
+        .items{
+            width:100%; padding:10px;
+            
+        }
+        .company1{
+            float: left;
+            background-color: rgb(139, 210, 57);
+        }
+
+        .company2{
+            float: right;
+            background-color:rgba(50, 206, 193, 0.677);
+        }
+        .company1,.company2{
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-        }
-
-        .sub-boxes {
-            height: 15vh;
-            width: 48vh;
-            background-color: white;
-            text-align: left;
+            justify-content: center;    
+            height:95%; width:40%;
             position: relative;
-            padding: 10px;
+            border-radius: 5px;;
         }
-
-
-        .flex-2 {
+        
+        section{
+            display: inline-block;
+        }
+        .vs{
+            position: absolute; left:44%;
+            top:30%;
+            width:18%;
+        }
+        .logoContainer{
+            height:40%;
             display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
-
+            justify-content: center;
         }
-
-        .rate-label {        /* --- rating star styling*/
-            position: absolute;
-            top: 10px;
-            left: 230px;
+        .logo{
+            height:50px;
+            width:50px;
         }
-
-        .star-block {
+        .star-1,.star-2{
+            height:60%;
+           padding-top:30px;
+           padding-left: 39px;
+        }
+         .btn {
+            height: 35px;
+            width: 90px;
+            background-color: black;
+            color: white;
             position: absolute;
-            left: 230px;
-            top: 45px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }   /* --- rating star styling completes*/
+            left:41.8%; top:77%;
+            border-radius: 5px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 15px;
+        }
+        .label {
+            color: black;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            /* position: absolute;
+            top: 40px; */
+        }
+      .fa-solid{
+        color: white;
+      }
 
         /* main page styling completes here */
 
         @media (min-width: 1200px) and (max-width:1330px) {
-            footer {
-                height: 70vh;
-                padding: 5px;
-            }
-
-            #footpart1 {
-                margin-top: 80px;
-            }
-
             #search input {
-                margin-left: 100px;
+                margin-left: 80px;
                 width: 225px;
             }
 
             #button {
-                margin-left: 70px;
+                margin-left: 90px;
             }
 
         }
 
         @media (min-width: 1100px) and (max-width:1200px) {
-            footer {
-                height: 70vh;
-                width: 100vw;
-                padding: 5px;
-            }
-
-            #footpart1 {
-                margin-top: 50px;
-            }
-
-            #cont5 {
-                margin-left: 17vw;
-            }
-
             #search input {
-                margin-left: 40px;
+                margin-left: 75px;
             }
 
             #button {
@@ -377,6 +400,7 @@
                 padding-left: 15px;
             }
         }
+
     </style>
 </head>
 
@@ -409,190 +433,268 @@
             </div>
 
             <div id="button">
-                <a href="/signUp/sign_up1.html"><button class="btn"><b>&nbsp;Log In &nbsp;/&nbsp; Sign In&nbsp;</b></button></a>
+                <button class="header-btn" onclick=""><b>&nbsp;Log In &nbsp;/&nbsp; Sign Up&nbsp;</b></button>
             </div>
         </nav>
     </header>
 
 
     <main>
-        <div class="container"><br><br>
-            <div class="flex-1">
-                <div class="box">
-                    <div class="s1-box1 sub-boxes">
-                        <h3>TCS</h3>
-                        <img src="TCS.png" height="25px">
+        <div class="container">
 
-                        <div class="rate-label"> <!--rating stars div block-->
-                            <h3>Ratings</h3>
-                        </div>
-                        <div class="star-block">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
-                        </div>
-                    </div>                <!--rating stars div block completes-->
-
-                    <div class="s2-box1 sub-boxes">
-                        <h3>Infosys</h3>
-                        <img src="infosys.png" height="45px">
-                        <div class="rate-label"> <!--rating stars div block-->
-                            <h3>Ratings</h3>
-                        </div>
-                        <div class="star-block">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
-                        </div>
+            <div class="items item1">
+    
+                <section class="company1">
+                    
+                    <div class="logoContainer">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
+                    class="logo" id="l1">
                     </div>
-                </div>
-
-                <div class="box">
-                    <div class="s1-box2 sub-boxes">
-                        <h3>Swiggy</h3>
-                        <img src="swiggy.png" height="40px">
-                        <div class="rate-label"> <!--rating stars div block-->
-                            <h3>Ratings</h3>
-                        </div>
-                        <div class="star-block">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
-                        </div>
+    
+                    <div class="star-1">
+                    <span class="label">Ratings:</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
                     </div>
-                    <div class="s2-box2 sub-boxes">
-                        <h3>Zomato</h3>
-                        <img src="zomato.png" height="40px">
-                        <div class="rate-label"> <!--rating stars div block-->
-                            <h3>Ratings</h3>
-                        </div>
-                        <div class="star-block">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
-                        </div>
+                </section>
+    
+                <section class="vs">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/VS.png?raw=true" height="60px" width="60px" > <!--class="icon" -->    
+                </section>
+                
+    
+                <section class="company2">
+                    <div class="logoContainer">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
+                    class="logo" id="l2">
                     </div>
-                </div>
-
-                <div class="box">
-                    <div class="s1-box3 sub-boxes">
-                        <h3>Instagram</h3>
-                        <img src="instagram.png" height="45px">
-                        <div class="rate-label"> <!--rating stars div block-->
-                            <h3>Ratings</h3>
-                        </div>
-                        <div class="star-block">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
-                        </div>
+    
+                    <div class="star-2">
+                    <span class="label">Ratings:</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
                     </div>
-                    <div class="s2-box3 sub-boxes">
-                        <h3>Facebook</h3>
-                        <img src="facebook.png" height="45px">
-                        <div class="rate-label"> <!--rating stars div block-->
-                            <h3>Ratings</h3>
-                        </div>
-                        <div class="star-block">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
-                        </div>
-                    </div>
-                </div>
-            </div> <br><br>
-
-            <div class="flex-2">
-                <div class="box">
-                    <div class="s1-box4 sub-boxes">
-                        <h3>Fastrack</h3>
-                        <img src="fastrack.png" height="40px">
-                        <div class="rate-label"> <!--rating stars div block-->
-                            <h3>Ratings</h3>
-                        </div>
-                        <div class="star-block">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
-                        </div>
-                    </div>
-                    <div class="s2-box4 sub-boxes">
-                        <h3>Titan</h3>
-                        <img src="titan.png" height="40px">
-                        <div class="rate-label"> <!--rating stars div block-->
-                            <h3>Ratings</h3>
-                        </div>
-                        <div class="star-block">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
-                        </div>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <div class="s1-box5 sub-boxes">
-                        <h3>Amazon</h3>
-                        <img src="amazon.png" height="45px">
-                        <div class="rate-label"> <!--rating stars div block-->
-                            <h3>Ratings</h3>
-                        </div>
-                        <div class="star-block">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
-                        </div>
-                    </div>
-                    <div class="s2-box5 sub-boxes">
-                        <h3>Flipkart</h3>
-                        <img src="flipkart.png" height="45px">
-                        <div class="rate-label"> <!--rating stars div block-->
-                            <h3>Ratings</h3>
-                        </div>
-                        <div class="star-block">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
-                        </div>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <div class="s1-box6 sub-boxes">
-                        <h3>PayTm</h3>
-                        <img src="paytm.png" height="45px">
-                        <div class="rate-label"> <!--rating stars div block-->
-                            <h3>Ratings</h3>
-                        </div>
-                        <div class="star-block">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
-                        </div>
-                    </div>
-                    <div class="s2-box6 sub-boxes">
-                        <h3>Google Pay</h3>
-                        <img src="gpay.png" height="45px" width="60px">
-                        <div class="rate-label"> <!--rating stars div block-->
-                            <h3>Ratings</h3>
-                        </div>
-                        <div class="star-block">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>&nbsp;&nbsp;3/5
-                        </div>
-                    </div>
-                </div>
+                </section> 
+                 
+                <button class="btn">Rate Polls</button>
+    
             </div>
-            <br><br>
-
-        </div>
+            <!-- Ratings and star code completes -->
+    
+            <div class="items item2">
+    
+                <section class="company1">
+                    
+                    <div class="logoContainer">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
+                    class="logo" id="l1">
+                    </div>
+    
+                    <div class="star-1">
+                    <span class="label">Ratings:</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    </div>
+                </section>
+    
+                <section class="vs">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/VS.png?raw=true" height="60px" width="60px" > <!--class="icon" -->    
+                </section>
+                
+    
+                <section class="company2">
+                    <div class="logoContainer">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
+                    class="logo" id="l2">
+                    </div>
+    
+                    <div class="star-2">
+                    <span class="label">Ratings:</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    </div>
+                </section> 
+                 
+                <button class="btn">Rate Polls</button>
+    
+            </div>
+     <!-- Ratings and star code completes -->
+    
+            <div class="items item3">
+    
+                <section class="company1">
+                    
+                    <div class="logoContainer">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
+                    class="logo" id="l1">
+                    </div>
+    
+                    <div class="star-1">
+                    <span class="label">Ratings:</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    </div>
+                </section>
+    
+                <section class="vs">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/VS.png?raw=true" height="60px" width="60px" > <!--class="icon" -->    
+                </section>
+                
+    
+                <section class="company2">
+                    <div class="logoContainer">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
+                    class="logo" id="l2">
+                    </div>
+    
+                    <div class="star-2">
+                    <span class="label">Ratings:</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    </div>
+                </section> 
+                 
+                <button class="btn">Rate Polls</button>
+    
+            </div>
+       <!-- Ratings and star code completes -->
+    
+            <div class="items item4">
+    
+                <section class="company1">
+                    
+                    <div class="logoContainer">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
+                    class="logo" id="l1">
+                    </div>
+    
+                    <div class="star-1">
+                    <span class="label">Ratings:</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    </div>
+                </section>
+    
+                <section class="vs">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/VS.png?raw=true" height="60px" width="60px" > <!--class="icon" -->    
+                </section>
+                
+    
+                <section class="company2">
+                    <div class="logoContainer">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
+                    class="logo" id="l2">
+                    </div>
+    
+                    <div class="star-2">
+                    <span class="label">Ratings:</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    </div>
+                </section> 
+                 
+                <button class="btn">Rate Polls</button>
+    
+            </div>
+     <!-- Ratings and star code --> 
+    
+            <div class="items item5">
+    
+                <section class="company1">
+                    
+                    <div class="logoContainer">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
+                    class="logo" id="l1">
+                    </div>
+    
+                    <div class="star-1">
+                    <span class="label">Ratings:</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    </div>
+                </section>
+    
+                <section class="vs">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/VS.png?raw=true" height="60px" width="60px" > <!--class="icon" -->    
+                </section>
+                
+    
+                <section class="company2">
+                    <div class="logoContainer">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
+                    class="logo" id="l2">
+                    </div>
+    
+                    <div class="star-2">
+                    <span class="label">Ratings:</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    </div>
+                </section> 
+                 
+                <button class="btn">Rate Polls</button>
+    
+            </div>
+     <!-- Ratings and star code --> 
+    
+            <div class="items item6">
+    
+                <section class="company1">
+                    
+                    <div class="logoContainer">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
+                    class="logo" id="l1">
+                    </div>
+    
+                    <div class="star-1">
+                    <span class="label">Ratings:</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    </div>
+                </section>
+    
+                <section class="vs">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/VS.png?raw=true" height="60px" width="60px" > <!--class="icon" -->    
+                </section>
+                
+    
+                <section class="company2">
+                    <div class="logoContainer">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
+                    class="logo" id="l2">
+                    </div>
+    
+                    <div class="star-2">
+                    <span class="label">Ratings:</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    </div>
+                </section> 
+                 
+                <button class="btn">Rate Polls</button>
+    
+            </div>
+            <!-- <div class="items item7">
+          < !-- Ratings and star code --> 
+    </div>
     </main>
 
 
     <footer>
 
-        <div id="footpart3">
+        <div id="footpart1">
             <p id="tgp">Total Generated polls:- 50,332</p>
             <p id="trc">Total Registered Companies:- 2,54,574</p>
             <p id="tlu">Total Logined Users:- 65,64,732</p>
@@ -652,16 +754,37 @@
             </div>
         </div>
 
-        <div id="footpart1">
-            TOP RATED COMPANIES:- <a href="">TATA Motors</a> | <a href="">Infosys</a> | <a href="">Facebook</a> | <a
-                href="">Jobbuzz</a> | <a href="">Adani Gas</a> | <a href="">Reliance Digital</a> | <a href="">Google</a>
-            | <a href="">Lenskart</a> | <a href="">Bharat Pay</a> | <a href="">Flipkart</a> | <a href="">Amazon</a> | <a
-                href="">Raymond</a> | <a href="">IBM</a> | <a href="">Maruti Suzuki</a> | <a href="">ICICI Bank</a> | <a
-                href="">Axis Bank</a> | <a href="">Wipro</a> | <a href="">Ultratach Cement</a> | <a href="">Ambuja
-                Cement</a> | <a href="">Cipla</a> | <a href="">Oracle</a> | <a href="">Kotak Bank</a> | <a
-                href="">Mahindra Motors</a> | <a href="">PayPal</a> | <a href="">Yamaha</a> | <a href="">Microsoft</a> |
-            <a href="">Kent</a> | <a href="">Paytm</a> | <a href="">Panasonic</a> | <a href="">HP</a> | <a href="">Mama
-                earth</a>
+        <div id="footpart3">
+            <dl>
+           <dt>TOP RATED COMPANIES:</dt> <br>
+           <dd><a href="">TATA Motors</a>
+           <a href="">Infosys</a> | 
+           <a href="">Facebook</a> | 
+           <a href="">Jobbuzz</a> | 
+           <a href="">Adani Gas</a> | 
+           <a href="">Reliance Digital</a> |
+           <a href="">Google</a> |
+           <a href="">Lenskart</a> | 
+           <a href="">Bharat Pay</a> | 
+           <a href="">Flipkart</a> | 
+           <a href="">Amazon</a> | 
+           <a href="">Raymond</a> | 
+           <a href="">IBM</a> | 
+           <a href="">Maruti Suzuki</a> | 
+           <a href="">ICICI Bank</a> | 
+           <a href="">Axis Bank</a>| 
+           <a href="">Wipro</a> | 
+           <a href="">Ultratach Cement</a> | 
+           <a href="">Ambuja Cement</a> | 
+           <a href="">Cipla</a> | 
+           <a href="">Oracle</a> |
+           <a href="">Kotak Bank</a> | 
+           <a href="">Mahindra Motors</a> | 
+           <a href="">PayPal</a> | 
+           <a href="">Yamaha</a> | 
+           <a href="">Microsoft</a> |
+           <a href="">Kent</a> |</dd>
+            </dl>
         </div>
     </footer>
 </body>
