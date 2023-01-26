@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rate it | Home Page</title>
     <script src="https://kit.fontawesome.com/c2a4c35825.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/20a4a662a5.js" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap');
 
@@ -105,8 +106,24 @@
             color: #ffad06;
             transition: 0.3s;
         }
-
+        
+        #search-logo{
+            z-index: 1;
+          position: absolute;
+          top:8px; left:750px; /* 720,970*/
+          height: 30px;
+          width: 30px; 
+          background-color: black;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition-property: left;
+          transition-timing-function: linear;
+          transition-duration: 1s;
+        }
         #search input {
+            z-index: 0;
             border-radius: 0px;
             height: 25px;
             margin-left: 120px;
@@ -115,6 +132,11 @@
             border-top-style: hidden;
             border-left-style: hidden;
             border-right-style: hidden;
+            opacity: 0;
+            transition-property: opacity;
+          transition-timing-function: linear;
+          transition-delay: 0.5s;
+          transition-duration: 0.8s;
         }
         #search input:focus{
             outline: none;
@@ -302,7 +324,7 @@
         }
 
 
-                    /* CODE BY PRO VINAY */
+                    /* CODE BY NOOB VINAY */
         .items{
             width:100%; padding:10px;
             
@@ -329,7 +351,8 @@
             display: inline-block;
         }
         .vs{
-            position: absolute; left:44%;
+            position: absolute; 
+            left:44.8%;
             top:30%;
             width:18%;
         }
@@ -337,23 +360,24 @@
             height:40%;
             display: flex;
             justify-content: center;
+            
         }
-        .logo{
+        /* .logo{
             height:50px;
             width:50px;
-        }
+        } */
         .star-1,.star-2{
             height:60%;
            padding-top:30px;
            padding-left: 39px;
         }
          .btn {
-            height: 35px;
+            height: 30px;
             width: 90px;
             background-color: black;
             color: white;
             position: absolute;
-            left:41.8%; top:77%;
+            left:41.8%; top:77.5%;
             border-radius: 5px;
             font-family: 'Nunito', sans-serif;
             font-size: 15px;
@@ -408,7 +432,7 @@
     <header>
         <nav>
             <img class="main_logo" src="https://raw.githubusercontent.com/GP-GANG/rateit.github.io/main/Other%20Files/photos/logo.png" alt="RATE-IT.COM">
-            <ul>
+            <ul id="navTool">
                 <div class="dropdown">
                     <li>
                         <div class="dropdown-text header-content">
@@ -427,13 +451,14 @@
                 <li><a href="#" class="header-content"><b>Contact Us</b></a></li>
                 <li><a href="#" class="header-content"><b>Review Us</b></a></li>
             </ul>
-
+            
+            <div id="search-logo"><i class="fa-solid fa-magnifying-glass"></i></div>
             <div id="search">
                 <input type="search" placeholder="Search . . . .">
             </div>
 
             <div id="button">
-                <a href="../signUp/sign_up1.html" ><button class="header-btn" onclick=""><b>&nbsp;Log In &nbsp;/&nbsp; Sign Up&nbsp;</b></button></a>
+                <button class="header-btn" onclick=""><b>&nbsp;Log In &nbsp;/&nbsp; Sign Up&nbsp;</b></button>
             </div>
         </nav>
     </header>
@@ -448,7 +473,7 @@
                     
                     <div class="logoContainer">
                     <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
-                    class="logo" id="l1">
+                    class="logo" id="l1" style="height: 30px; width: 40px; margin-top: 5px;">
                     </div>
     
                     <div class="star-1">
@@ -467,7 +492,7 @@
                 <section class="company2">
                     <div class="logoContainer">
                     <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
-                    class="logo" id="l2">
+                    class="logo" id="l2" style="height: 60px; width: 55px; margin-top: 0px;">
                     </div>
     
                     <div class="star-2">
@@ -488,8 +513,8 @@
                 <section class="company1">
                     
                     <div class="logoContainer">
-                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
-                    class="logo" id="l1">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/amazon.png?raw=true"
+                    class="logo" id="l1" style="height: 50px; width: 50px; margin-top: 5px;">
                     </div>
     
                     <div class="star-1">
@@ -507,8 +532,8 @@
     
                 <section class="company2">
                     <div class="logoContainer">
-                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
-                    class="logo" id="l2">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/flipkart.png?raw=true"
+                    class="logo" id="l2" style="height: 40px; width: 40px; margin-top: 7px;">
                     </div>
     
                     <div class="star-2">
@@ -529,8 +554,8 @@
                 <section class="company1">
                     
                     <div class="logoContainer">
-                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
-                    class="logo" id="l1">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/facebook.png?raw=true"
+                    class="logo" id="l1" style="height: 50px; width: 50px; margin-top: 5px;">
                     </div>
     
                     <div class="star-1">
@@ -548,8 +573,8 @@
     
                 <section class="company2">
                     <div class="logoContainer">
-                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
-                    class="logo" id="l2">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/instagram.png?raw=true"
+                    class="logo" id="l2" style="height: 50px; width: 50px; margin-top: 5px;">
                     </div>
     
                     <div class="star-2">
@@ -570,8 +595,8 @@
                 <section class="company1">
                     
                     <div class="logoContainer">
-                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
-                    class="logo" id="l1">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/gpay.png?raw=true"
+                    class="logo" id="l1" style="height: 50px; width: 50px; margin-top: 5px;">
                     </div>
     
                     <div class="star-1">
@@ -589,8 +614,8 @@
     
                 <section class="company2">
                     <div class="logoContainer">
-                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
-                    class="logo" id="l2">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/paytm.png?raw=true"
+                    class="logo" id="l2" style="height: 60px; width: 60px; margin-top: 0px;">
                     </div>
     
                     <div class="star-2">
@@ -611,8 +636,8 @@
                 <section class="company1">
                     
                     <div class="logoContainer">
-                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
-                    class="logo" id="l1">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/swiggy.png?raw=true"
+                    class="logo" id="l1" style="height: 50px; width: 50px; margin-top: 5px;">
                     </div>
     
                     <div class="star-1">
@@ -630,8 +655,8 @@
     
                 <section class="company2">
                     <div class="logoContainer">
-                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
-                    class="logo" id="l2">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/zomato.png?raw=true"
+                    class="logo" id="l2" style="height: 40px; width: 40px; margin-top: 10px;">
                     </div>
     
                     <div class="star-2">
@@ -652,8 +677,8 @@
                 <section class="company1">
                     
                     <div class="logoContainer">
-                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
-                    class="logo" id="l1">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/fastrack.png?raw=true"
+                    class="logo" id="l1" style="height: 60px; width: 60px; margin-top: 0px;">
                     </div>
     
                     <div class="star-1">
@@ -671,8 +696,8 @@
     
                 <section class="company2">
                     <div class="logoContainer">
-                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
-                    class="logo" id="l2">
+                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/titan.png?raw=true"
+                    class="logo" id="l2" style="height: 35px; width: 35px; margin-top: 12px;">
                     </div>
     
                     <div class="star-2">
@@ -787,6 +812,28 @@
             </dl>
         </div>
     </footer>
+
+    <script type="text/javascript">
+    
+        window.addEventListener("DOMContentLoaded", ()=>{
+                
+                console.log(sessionStorage.getItem("RateitLOGGEDIN"));
+    
+                if (sessionStorage.getItem("RateitLOGGEDIN") == "true") {
+                document.getElementById("button").style.display = "none";
+                document.getElementById("search").style.marginLeft = "80px";
+                document.getElementById("navTool").style.marginLeft = "220px";
+            }
+        })
+
+        const searchLogo = document.getElementById("search-logo");
+
+        searchLogo.addEventListener("click" ,  ()=>{
+            document.getElementById("search-logo").style.left = "970px";
+            document.querySelector("#search input").style.opacity = "1";
+        })
+    
+    </script>
 </body>
 
 </html>
