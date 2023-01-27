@@ -23,6 +23,7 @@
             --header-color: white;
             --contain-color: #a3acada6;
             --footer-color: black;
+            --search-logo-left : 750px;
         }
 
         nav {
@@ -110,7 +111,7 @@
         #search-logo{
             z-index: 1;
           position: absolute;
-          top:8px; left:750px; /* 720,970*/
+          top:8px; left: 750px; /* 720,970*/
           height: 30px;
           width: 30px; 
           background-color: black;
@@ -458,7 +459,7 @@
             </div>
 
             <div id="button">
-                <button class="header-btn" onclick=""><b>&nbsp;Log In &nbsp;/&nbsp; Sign Up&nbsp;</b></button>
+               <a href="../signUp/sign_up1.html" > <button class="header-btn" onclick=""><b>&nbsp;Log In &nbsp;/&nbsp; Sign Up&nbsp;</b></button></a>
             </div>
         </nav>
     </header>
@@ -814,22 +815,26 @@
     </footer>
 
     <script type="text/javascript">
+        let searchlogo = 750;
     
         window.addEventListener("DOMContentLoaded", ()=>{
                 
                 console.log(sessionStorage.getItem("RateitLOGGEDIN"));
     
                 if (sessionStorage.getItem("RateitLOGGEDIN") == "true") {
+                searchlogo = 1040;
                 document.getElementById("button").style.display = "none";
                 document.getElementById("search").style.marginLeft = "80px";
                 document.getElementById("navTool").style.marginLeft = "220px";
+                document.getElementById("search-logo").style.position = "absolute";
+                document.getElementById("search-logo").style.left= searchlogo + "px";
             }
         })
 
         const searchLogo = document.getElementById("search-logo");
 
         searchLogo.addEventListener("click" ,  ()=>{
-            document.getElementById("search-logo").style.left = "970px";
+            document.getElementById("search-logo").style.left = searchlogo + 220 + "px";
             document.querySelector("#search input").style.opacity = "1";
         })
     
